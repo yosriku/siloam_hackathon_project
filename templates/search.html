@@ -1,0 +1,26 @@
+<!-- templates/search.html -->
+<!doctype html>
+<html>
+<head>
+    <title>DokterQA</title>
+</head>
+<body>
+    <h1>Pencarian Dokter & Info Medis</h1>
+    <form method="post">
+        <input type="text" name="query" placeholder="Masukkan pertanyaan..." style="width:300px;" />
+        <input type="submit" value="Cari" />
+    </form>
+
+    {% if answer %}
+        <h2>Jawaban:</h2>
+        <p>{{ answer }}</p>
+
+        <h3>Sumber:</h3>
+        <ul>
+            {% for source in sources %}
+                <li>{{ source }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
